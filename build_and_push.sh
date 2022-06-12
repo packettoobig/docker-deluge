@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 # Usage 
 # ./build_and_push.sh MAXMIND_LICENSE_KEY
-#
+# You can get a free license key from them.
+# Instructions here : https://dev.maxmind.com/geoip/geolite2-free-geolocation-data?lang=en
 # VARS
 dailytag=$(date -I)
 imagename='pilbbq/deluge'
