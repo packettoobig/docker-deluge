@@ -6,6 +6,6 @@ COPY ["root/", "/"]
 
 RUN bash /dockerinstall/install.sh
 
-# ports and volumes
-#EXPOSE 8112 58846 58946 58946/udp
-#VOLUME /config /downloads
+ENTRYPOINT /usr/bin/deluged -d -c /deluge
+
+# Please use macvlan or host network : https://docs.docker.com/network/macvlan/

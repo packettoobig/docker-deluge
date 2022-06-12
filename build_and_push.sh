@@ -19,7 +19,7 @@ if [ $# -eq 0 ]; then
     exit 1
 fi
 curl -o $geolite2_zip -sL $geolite2country_url
-docker run -it -v $(pwd):/src $geolite2legacy_image -i /src/$geolite2_zip -o /src/$geoip_target_location
+docker run -it -v $(pwd):/src $geolite2legacy_image -i /src/$geolite2_zip -o /src/$geoip_target_location -6
 
 if [[ -f $geoip_target_location ]]
 then
