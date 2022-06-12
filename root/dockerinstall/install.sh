@@ -3,7 +3,7 @@
 
 # Install
 apt-get -qq update && \
-apt-get -qq install \
+apt-get -qq --no-install-recommends install \
     ca-certificates \
     curl \
     deluge-console=1.3.15-2 \
@@ -14,12 +14,8 @@ apt-get -qq install \
     python3-libtorrent \
     xfsprogs
 
-# Update GeoIP
-curl -o /usr/share/GeoIP/GeoIP.dat \
-    -L "https://ipfs.infura.io/ipfs/QmWTWcPRRbADZcLcJeANZmcJZNrcpmuQgKYBi6hGdddtC6"
-
 # Cleanup
-apt-get -qq purge \
+apt-get -qq --auto-remove purge \
     curl \
     lib-*dev \
     build-essential
