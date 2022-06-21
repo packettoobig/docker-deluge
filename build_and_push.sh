@@ -24,7 +24,7 @@ docker run -it -v $(pwd):/src $geolite2legacy_image -i /src/$geolite2_zip -o /sr
 if [[ -f $geoip_target_location ]]
 then
     # Build daily and latest
-    docker build -t $dailyimage -t $latestimage .
+    docker build --no-cache -t $dailyimage -t $latestimage .
     # Push all tags
     docker push -a $imagename
 else

@@ -6,6 +6,7 @@ apt-get -qq update && \
 apt-get -qq --no-install-recommends install \
     ca-certificates \
     curl \
+    net-tools \
     deluge-console=1.3.15-2 \
     deluged=1.3.15-2 \
     python-crypto \
@@ -25,3 +26,6 @@ apt-get -qq clean
 rm -rf /var/lib/apt/lists/* \
     /dockerinstall/* \
     /tmp/*
+
+# Post-install
+chmod +x /usr/local/bin/*.sh /usr/local/bin/healthcheck.sh 
