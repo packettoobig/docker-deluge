@@ -8,6 +8,8 @@ RUN bash /dockerinstall/install.sh
 
 ENTRYPOINT ["/usr/bin/deluged", "-d", "-c", "/deluge" ] 
 
+WORKDIR ["/workdir"]
+
 HEALTHCHECK --start-period=1m --interval=15s --timeout=15s \
    CMD /usr/local/bin/healthcheck.sh
 
