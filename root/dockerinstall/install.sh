@@ -13,7 +13,32 @@ apt-get -qq --no-install-recommends install \
     python-libtorrent \
     python3-crypto \
     python3-libtorrent \
-    xfsprogs
+    xfsprogs \
+    dirmngr \
+    gnupg \
+    apt-transport-https
+# Last 3 lines are for filebot
+
+# Equivalent command : apt-key adv --fetch-keys https://get.filebot.net/filebot/KEYS
+apt-key adv --fetch-keys https://raw.githubusercontent.com/filebot/plugins/master/gpg/maintainer.pub
+
+echo "deb [arch=all] https://get.filebot.net/deb/ universal main" | tee /etc/apt/sources.list.d/filebot.list
+apt-get -qq update
+
+apt-get -qq --no-install-recommends install \
+    filebot \
+    default-jre-headless \
+    libjna-java \
+    mediainfo \
+    libchromaprint-tools \
+    p7zip-full \
+    xz-utils \
+    mkvtoolnix \
+    atomicparsley \
+    sudo \
+    gnupg \
+    curl \
+    file
 
 # Cleanup
 apt-get -qq --auto-remove purge \
@@ -29,3 +54,4 @@ rm -rf /var/lib/apt/lists/* \
 
 # Post-install
 chmod +x /usr/local/bin/*.sh /usr/local/bin/healthcheck.sh 
+chmod +x /entrypoint.sh

@@ -23,10 +23,12 @@ docker run -it -v $(pwd):/src $geolite2legacy_image -i /src/$geolite2_zip -o /sr
 
 if [[ -f $geoip_target_location ]]
 then
-    # Build daily and latest
-    docker build --no-cache -t $dailyimage -t $latestimage .
+    # Build daily, latest and uuid
+    docker build -t $dailyimage -t $latestimage .
     # Push all tags
     docker push -a $imagename
+    # Cleanup stuff older than 2weeks
+    docker system prune -af --filter "until=336h"
 else
     echo "GeoIP.dat is not present, exiting"
     exit 1
