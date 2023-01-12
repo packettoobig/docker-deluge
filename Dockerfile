@@ -1,4 +1,4 @@
-FROM debian:10-slim
+FROM debian:11-slim
 
 LABEL maintainer="pilbbq"
 
@@ -12,7 +12,7 @@ COPY ["root/", "/"]
 
 RUN bash /dockerinstall/install.sh
 
-ENTRYPOINT ["/entrypoint.sh", "/usr/bin/deluged", "-d", "-c", "/deluge" ] 
+ENTRYPOINT ["/entrypoint.sh", "/usr/local/bin/deluged", "-d", "-c", "/deluge" ]
 
 HEALTHCHECK --start-period=1m --interval=15s --timeout=15s \
    CMD /usr/local/bin/healthcheck.sh

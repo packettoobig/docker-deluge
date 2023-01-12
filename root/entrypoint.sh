@@ -14,4 +14,5 @@ chown -R "$PUID:$PGID" "$USERHOME"
 
 # run as normal user
 # exec sudo -u "#$PUID" -g "#$PGID" -HD "$USERHOME" --non-interactive --preserve-env "$@"
-exec sudo -u "$USERNAME" -g "$GROUPNAME" -HD "$USERHOME" --non-interactive --preserve-env "$@"
+# exec sudo -u "$USERNAME" -g "$GROUPNAME" -HD "$USERHOME" --non-interactive --preserve-env "$@"
+exec sudo -u "$USERNAME" -g "$GROUPNAME" -H --non-interactive --preserve-env "$@"
