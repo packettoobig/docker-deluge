@@ -8,21 +8,23 @@ apt-get -qq --no-install-recommends install \
     curl \
     net-tools \
     python3-pip \
-    python3-libtorrent \
     xfsprogs \
     dirmngr \
     gnupg \
     apt-transport-https
-# Last 3 lines are for filebot
+# Last 3 apt lines are for filebot
 
-# Here were some packages for the 1.3.15 release (debian:10-slim)
+pip3 install --no-input \
+    deluge \
+    libtorrent
+
+# Here were some apt packages for the 1.3.15 release (debian:10-slim)
 #    deluge-console=1.3.15-2 \
 #    deluged=1.3.15-2 \
 #    python-crypto \
 #    python-libtorrent \
 #    python3-crypto \
-
-pip3 install --no-input deluge
+#     python3-libtorrent \
 
 # Equivalent command : apt-key adv --fetch-keys https://get.filebot.net/filebot/KEYS
 apt-key adv --fetch-keys https://raw.githubusercontent.com/filebot/plugins/master/gpg/maintainer.pub
