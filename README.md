@@ -1,7 +1,7 @@
 # docker-deluge
 
 deluge and filebot in docker  
-See the 1.3.15 branch (and 2022-09-18 tag for deluge 1.3)  
+See the 1.3.15 branch (and 2022-09-18 tag) for deluge 1.3  
 <https://hub.docker.com/r/pilbbq/deluge>
 
 ## Example
