@@ -1,14 +1,23 @@
 name: Docker Image CI
 
 on:
+  schedule:
+    - cron: "0 10 * * 1"
   push:
     branches:
       - 'master'
+      
 
 jobs:
   docker:
     runs-on: ubuntu-latest
     steps:
+      -
+        name: Get current date
+        id: getdate
+        uses: Kaven-Universe/github-action-current-date-time@v1
+        with:
+          format: "YYYY-MM-DD"
       -
         name: Checkout
         uses: actions/checkout@v3
@@ -30,5 +39,4 @@ jobs:
         with:
           context: .
           push: true
-          tags: pilbbq/deluge:autobuilt
-
+          tags: pilbbq/deluge:autobuilt, pilbbq/deluge:${{ steps.getdate.outputs.time }}
