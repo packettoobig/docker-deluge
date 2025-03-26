@@ -28,7 +28,7 @@ apt-key adv --fetch-keys https://raw.githubusercontent.com/filebot/plugins/maste
 echo "deb [arch=all] https://get.filebot.net/deb/ universal main" | tee /etc/apt/sources.list.d/filebot.list
 apt-get -qq update
 
-apt-get -qq --no-install-recommends install \
+apt-get -qq --install-recommends install \
     filebot \
     default-jre-headless \
     libjna-java \
