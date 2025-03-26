@@ -41,7 +41,8 @@ apt-get -qq --no-install-recommends install \
     sudo \
     gnupg \
     curl \
-    file
+    file \
+    six
 
 # Cleanup
 apt-get -qq --auto-remove purge \
