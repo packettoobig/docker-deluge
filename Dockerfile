@@ -1,12 +1,12 @@
-FROM debian:11-slim
+FROM debian:12-slim
 
 LABEL maintainer="pilbbq"
 
-ENV LANG C.UTF-8
-ENV GROUPNAME delugegroup
-ENV USERNAME delugeusr
-ENV PUID 1111
-ENV PGID 1111
+ENV LANG=C.UTF-8
+ENV GROUPNAME=delugegroup
+ENV USERNAME=delugeusr
+ENV PUID=1111
+ENV PGID=1111
 
 COPY ["root/", "/"]
 
