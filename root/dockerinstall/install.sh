@@ -23,7 +23,8 @@ pip3 install --no-input --break-system-packages \
     deluge \
     libtorrent \
     distro \
-    ifaddr
+    ifaddr \
+    six
 
 curl -fsSL "https://raw.githubusercontent.com/filebot/plugins/master/gpg/maintainer.pub" | gpg --dearmor --output "/usr/share/keyrings/filebot.gpg"
 echo "deb [arch=all signed-by=/usr/share/keyrings/filebot.gpg] https://get.filebot.net/deb/ universal main" > /etc/apt/sources.list.d/filebot.list
