@@ -3,6 +3,7 @@ FROM debian:12-slim
 LABEL maintainer="pilbbq"
 
 ENV LANG=C.UTF-8
+ENV LC_ALL=C.UTF-8
 ENV GROUPNAME=delugegroup
 ENV USERNAME=delugeusr
 ENV PUID=1111
