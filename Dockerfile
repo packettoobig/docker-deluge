@@ -8,6 +8,8 @@ ENV GROUPNAME=delugegroup
 ENV USERNAME=delugeusr
 ENV PUID=1111
 ENV PGID=1111
+ENV SSL_CERT_FILE=/etc/ssl/certs/ca-certificates.crt
+ENV SSL_CERT_DIR=/etc/ssl/certs
 
 COPY ["root/", "/"]
 
