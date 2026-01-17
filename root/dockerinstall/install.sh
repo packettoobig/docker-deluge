@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 # File location during build: /dockerinstall/install.sh
 
+set -eo pipefail
+
 # Install
 apt-get -qq update && \
 apt-get -qq --no-install-recommends install \
