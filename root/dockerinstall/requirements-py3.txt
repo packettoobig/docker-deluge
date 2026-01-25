@@ -1,0 +1,7 @@
+deluge < 3.0
+libtorrent
+distro
+ifaddr
+six
+chardet
+pillow

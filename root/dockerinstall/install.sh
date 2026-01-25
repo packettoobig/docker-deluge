@@ -21,14 +21,10 @@ apt-get -qq --no-install-recommends install \
 # Last 3 apt lines are for filebot
 
 # https://deluge.readthedocs.io/en/latest/depends.html
-pip3 install --no-input --break-system-packages \
-    deluge \
-    libtorrent \
-    distro \
-    ifaddr \
-    six
+pip3 install --no-input --break-system-packages -r requirements-py3.txt
 
 # GeoIP Database Setup
+mkdir -p /usr/share/GeoIP/
 geoip_dat_path="/usr/share/GeoIP/GeoIP.dat"
 # downlad latest GeoIP.dat from linuxserver.io
 # Inspired from https://github.com/linuxserver/docker-deluge/blob/9658bd613c16e41edc5582db67ca58bc34f75a69/root/app/update-geoip.sh
@@ -37,6 +33,8 @@ curl -s -L --retry 3 --retry-max-time 30 --retry-all-errors \
     gunzip > /tmp/GeoIP.dat && \
     mv /tmp/GeoIP.dat "${geoip_dat_path}" && \
     chmod 644 "${geoip_dat_path}"
+
+ls -l "${geoip_dat_path}"
 
 # FileBot Repository Setup
 curl -fsSL "https://raw.githubusercontent.com/filebot/plugins/master/gpg/maintainer.pub" | gpg --dearmor --output "/usr/share/keyrings/filebot.gpg"
