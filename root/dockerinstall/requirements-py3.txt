@@ -1,5 +1,6 @@
 deluge < 3.0
 libtorrent
+pygeoip
 distro
 ifaddr
 six
