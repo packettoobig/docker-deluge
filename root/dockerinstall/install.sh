@@ -1,7 +1,11 @@
 #!/usr/bin/env bash
 # File location during build: /dockerinstall/install.sh
 
+# Exit on error
 set -eo pipefail
+
+# Change to the script's directory
+cd "$(dirname "$0")"
 
 # Install
 apt-get -qq update && \
