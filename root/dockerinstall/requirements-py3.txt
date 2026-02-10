@@ -1,4 +1,5 @@
 deluge < 3.0
+setuptools
 libtorrent
 pygeoip
 distro
